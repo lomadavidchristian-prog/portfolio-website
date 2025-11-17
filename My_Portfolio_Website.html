@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>David Christian Loma | Personal Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #3498db;
+        --secondary: #2c3e50;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #2c3e50;
+        --gray: #95a5a6;
+        --success: #2ecc71;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: #f9f9f9;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: white;
+        box-shadow: var(--shadow);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 1.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      main {
+        margin-top: 80px;
+        min-height: calc(100vh - 160px);
+      }
+
+      .page {
+        display: none;
+        padding: 2rem 0;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-content {
+        flex: 1;
+        min-width: 300px;
+        padding-right: 2rem;
+      }
+
+      .hero-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+
+      .hero-image img,
+      .about-image img {
+        max-width: 250px;
+        border-radius: 50%;
+        box-shadow: var(--shadow);
+      }
+
+      .education-item,
+      .experience-item,
+      .service-item,
+      .skill-item,
+      .blog-post,
+      .testimonial-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 5px;
+        box-shadow: var(--shadow);
+        margin-bottom: 1.5rem;
+      }
+
+      .about-image {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      footer {
+        background: var(--secondary);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      .social-links a {
+        color: white;
+        margin: 0 1rem;
+        font-size: 1.5rem;
+        transition: 0.3s;
+      }
+
+      .social-links a:hover {
+        color: var(--primary);
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: white;
+          width: 100%;
+          box-shadow: var(--shadow);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 1rem 0;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">David Christian Loma</a>
+          <ul class="nav-links">
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="about">About</a></li>
+            <li><a href="#" data-page="education">Education</a></li>
+            <li><a href="#" data-page="skills">Skills</a></li>
+            <li><a href="#" data-page="projects">Projects</a></li>
+            <li><a href="#" data-page="hobbies">Hobbies</a></li>
+            <li><a href="#" data-page="contact">Contact</a></li>
+          </ul>
+          <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <!-- HOME -->
+        <section id="home" class="page active">
+          <div class="hero">
+            <div class="hero-content">
+              <h1>David Christian Loma</h1>
+              <h2>BSIT Student • Web Developer (Beginner)</h2>
+              <p>
+                Hello! I'm David, a 3rd-year Bachelor of Science in Information Technology
+                student at Holy Name University. I'm currently learning web development,
+                programming fundamentals, and IT concepts. This website showcases my growing
+                skills, projects, and journey in the tech world.
+              </p>
+              <a href="#" data-page="projects" class="btn">See My Projects</a>
+            </div>
+
+            <div class="hero-image">
+              <img src="556743494_1880936076158438_3209665540594314443_n.jpg" alt="My Photo" />
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="page">
+          <h1>About Me</h1>
+          <div class="about-image">
+            <img src="images.jpg" alt="About Me Image" />
+          </div>
+          <p>
+            I'm David Christian Loma from Carmen, Bohol, Philippines. I enjoy learning new
+            technologies and improving my skills in web development and IT. My goal is to
+            become a full-stack developer in the future.
+          </p>
+          <p>
+            Aside from coding, I enjoy exploring tech videos, learning design, and improving my
+            problem-solving ability.
+          </p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="page">
+          <h1>Education</h1>
+
+          <div class="education-item">
+            <h3>Bachelor of Science in Information Technology</h3>
+            <p><strong>Holy Name University</strong> | 2025 – Present</p>
+            <p>Currently a 3rd-year student.</p>
+          </div>
+
+          <div class="education-item">
+            <h3>Elementary Graduate</h3>
+            <p><strong>Sea Young Christian School, Pardo, Cebu City</strong> | 2016 – 2017</p>
+          </div>
+
+          <div class="education-item">
+            <h3>High School Graduate</h3>
+            <p><strong>Mahayag National High School, San Miguel Bohol</strong> | 2023 – 2024</p>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="page">
+          <h1>Skills</h1>
+
+          <div class="skill-item">
+            <h3>Web Development</h3>
+            <p>HTML • CSS • Basic JavaScript</p>
+          </div>
+
+          <div class="skill-item">
+            <h3>Tools</h3>
+            <p>VS Code • GitHub • Canva</p>
+          </div>
+
+          <div class="skill-item">
+            <h3>Other Skills</h3>
+            <p>Basic troubleshooting • Typing • Layout design</p>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="page">
+          <h1>Projects</h1>
+
+          <div class="education-item">
+            <h3>Personal Portfolio Website</h3>
+            <p>A simple personal website built using HTML, CSS, and JavaScript.</p>
+          </div>
+
+          <div class="education-item">
+            <h3>School Activities</h3>
+            <p>Various Python exercises, Java basics, and web design tasks.</p>
+          </div>
+        </section>
+
+        <!-- HOBBIES -->
+        <section id="hobbies" class="page">
+          <h1>My Hobbies</h1>
+
+          <div class="education-item">
+            <h3>Hobbies</h3>
+            <ul>
+              <li>Building Mini Web Projects</li>
+              <li>Learning New Web Technologies</li>
+              <li>UI/UX Design Practice</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="page">
+          <h1>Contact Me</h1>
+
+          <div class="education-item">
+            <h3>Email</h3>
+            <p>loma.david_christian@hnu.edu.ph</p>
+          </div>
+
+          <div class="education-item">
+            <h3>Phone</h3>
+            <p>+63 965 320 4488</p>
+          </div>
+
+          <div class="education-item">
+            <h3>Location</h3>
+            <p>Carmen, Bohol, Philippines</p>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 David Christian Loma. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-links a");
+        const pages = document.querySelectorAll(".page");
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+        });
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            pages.forEach((page) => page.classList.remove("active"));
+            const target = this.getAttribute("data-page");
+            document.getElementById(target).classList.add("active");
+            navMenu.classList.remove("active");
+            window.scrollTo(0, 0);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
